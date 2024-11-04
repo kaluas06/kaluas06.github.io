@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALUA`S</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Para enlazar CSS externo -->
+</head>
+
+<body>
+    <header>
+        <h1>KALUA`S</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Tienda</a></li>
+                <li><a href="#projects">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects">
+            <h2>Nosotros</h2>
+            <ul>
+                <p>KALUA'S es una marca de moda que celebra la elegancia casual de la mujer moderna. Con diseños
+                    frescos, cómodos y de alta calidad, nuestra ropa está pensada para resaltar tu estilo personal en
+                    cada ocasión. Encuentra en KALUA'S la combinación perfecta de tendencias actuales y comodidad, ideal
+                    para tu día a día.</p>
+            </ul>
+        </section>
+
+        <section id="about">
+            <!DOCTYPE html>
+            <html lang="es">
+
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Este es el título de la página</title>
+                <style>
+                    /* CSS para centrar y agrandar el título */
+                    h1 {
+                        text-align: center;
+                        font-size: 3em;
+                    }
+                </style>
+            </head>
+
+            <body>
+                <h1>TIENDA</h1>
+                <p>Descubre la moda casual que combina estilo y comodidad. Aquí empieza tu viaje de moda con KALUA'S.</p>
+            </body>
+
+            </html>
+        </section>
+        <html lang="es">
+
+        <!DOCTYPE html>
+        <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tienda de Ropa</title>
+            <style>
+                .image-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 15px;
+                }
+
+                .image-item {
+                    text-align: center;
+                    width: 30%;
+                }
+
+                .image-item img {
+                    width: 80%;
+                    height: auto;
+                    border-radius: 5px;
+                }
+
+                .image-item button {
+                    margin-top: 10px;
+                    padding: 8px 12px;
+                    font-size: 1em;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #007bff;
+                    color: white;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .image-item button:hover {
+                    background-color: #0056b3;
+                }
+
+                .cart-link {
+                    display: block;
+                    margin: 20px auto;
+                    text-decoration: none;
+                    color: white;
+                    background-color: #28a745;
+                    padding: 10px;
+                    border-radius: 5px;
+                    text-align: center;
+                    width: 150px;
+                }
+
+                .cart-link:hover {
+                    background-color: #218838;
+                }
+            </style>
+        </head>
+
+        <body>
+            <div class="image-container">
+                <div class="image-item">
+                    <img src="imagen1.jpeg" alt="Descripción de Imagen 1">
+                    <p>Pantalones anchos plisados de cintura alta Precio </p>
+                    <p>S/. 55.00</p>
+                    <button onclick="addToCart('imagen1', 55.00)">Agregar al Carrito</button>
+                </div>
+                <div class="image-item">
+                    <img src="imagen2.jpeg" alt="Descripción de Imagen 2">
+                    <p>Top Camisole de Poliéster Elegante Precio</p>
+                    <p>S/. 30.00</p>
+                    <button onclick="addToCart('imagen2', 30.00)">Agregar al Carrito</button>
+                </div>
+                <div class="image-item">
+                    <img src="imagen3.jpeg" alt="Descripción de Imagen 3">
+                    <p>Top sin mangas fruncido con cuello redondo</p>
+                    <p>S/. 35.00</p>
+                    <button onclick="addToCart('imagen3', 35.00)">Agregar al Carrito</button>
+                </div>
+                <div class="image-item">
+                    <img src="imagen4.jpeg" alt="Descripción de Imagen 4">
+                    <p>Top Corto Sin Mangas - Cuello en V con Botones</p>
+                    <p>S/. 45.00</p>
+                    <button onclick="addToCart('imagen4', 45.00)">Agregar al Carrito</button>
+                </div>
+                <div class="image-item">
+                    <img src="imagen5.jpeg" alt="Descripción de Imagen 2">
+                    <p>Elegante Blazer de Cuadros Recortado</p>
+                    <p>S/. 65.00</p>
+                    <button onclick="addToCart('imagen5', 65.00)">Agregar al Carrito</button>
+                </div>
+                <div class="image-item">
+                    <img src="imagen6.jpeg" alt="Descripción de Imagen 3">
+                    <p>Blusa Elegante con Frente Retorcido y Cuello Halter</p>
+                    <p>S/. 45.00</p>
+                    <button onclick="addToCart('imagen6', 45.00)">Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <!-- Enlace para ver el carrito -->
+            <a href="carrito.html" class="cart-link">Ver Carrito</a>
+
+            <script>
+                function addToCart(producto, precio) {
+                    // Obtener el carrito actual del localStorage
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Agregar el nuevo producto al carrito
+                    cart.push({ producto: producto, precio: precio });
+
+                    // Guardar el carrito actualizado en el localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    alert(`Agregado al carrito: ${producto}`);
+                }
+            </script>
+        </body>
+
+        </html>
+
+
+
+
+
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>+51 924567897</p>
+            <p>kaluas@gmail.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KALUA`S. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
